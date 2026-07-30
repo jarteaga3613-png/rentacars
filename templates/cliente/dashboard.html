@@ -1,0 +1,27 @@
+{% extends 'layout/base.html' %}
+{% block titulo %}Cliente{% endblock %}
+{% block contenido %}
+<div class="card shadow">
+    <div class="card-header bg-success text-white">
+        Panel del Cliente
+    </div>
+    <div class="card-body">
+        <h4>Bienvenido {{ session["nombre"] }}</h4>
+        <p>Rol: <strong>{{ session["rol"] }}</strong></p>
+
+        <!-- Botón para ver vehículos -->
+        <a href="{{ url_for('cliente.ver_vehiculos') }}" class="btn btn-success">Ver Vehículos</a>
+
+        <!-- Botón para historial de rentas -->
+        <a href="{{ url_for('cliente.historial_rentas') }}" class="btn btn-warning">Historial de Rentas</a>
+
+        <!-- Botón para cerrar sesión -->
+        <a href="{{ url_for('acceso.cerrar_sesion') }}" class="btn btn-danger">Cerrar sesión</a>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
